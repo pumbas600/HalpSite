@@ -13,6 +13,6 @@ MERN Stack?
 
 - [ ] Steam table look ups
 - [ ] Pomodoro timer
-- [ ] Dictory / Synonym API
+- [ ] Dictionary / Synonym API
 - [ ] TODO Lists - Integrated with calendars
 - [ ] Calendar integration
