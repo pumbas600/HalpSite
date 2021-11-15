@@ -5,5 +5,5 @@ function output = myFun(input)
 %
 % Long description
 
-output = input
+output = input;
 end
