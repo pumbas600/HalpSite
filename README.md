@@ -16,3 +16,4 @@ MERN Stack?
 - [ ] Dictionary / Synonym API
 - [ ] TODO Lists - Integrated with calendars
 - [ ] Calendar integration
+- [ ] Joe Biden
