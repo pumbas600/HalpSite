@@ -19,7 +19,7 @@ function TodoItem({ itemData }) {
           className={isComplete ? "checkedStyle" : "uncheckedStyle"}
           control={
             <Checkbox
-              defaultChecked={isComplete}
+              defaultChecked={itemData.isComplete}
               onChange={toggle}
               sx={{
                 color: "#fff",
