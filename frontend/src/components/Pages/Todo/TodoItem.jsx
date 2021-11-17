@@ -8,16 +8,16 @@ import "./todoitem.css";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function TodoItem({ itemData }) {
-  const [checked, setChecked] = useState(false);
+  const [isComplete, setIsComplete] = useState(itemData.isComplete || false);
 
   let toggle = () => {
-    setChecked(!checked);
+    setIsComplete(!isComplete);
   };
   return (
     <li>
       <FormGroup>
         <FormControlLabel
-          className={checked ? "checkedStyle" : "uncheckedStyle"}
+          className={isComplete ? "checkedStyle" : "uncheckedStyle"}
           control={
             <Checkbox
               defaultChecked
