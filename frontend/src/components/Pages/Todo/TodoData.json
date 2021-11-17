@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "1",
+        "dateCreated": "17/11/2021",
+        "items": [
+            {
+                "content": "I am a list item",
+                "isCompleted": false,
+                "dateDue": "",
+                "items": [
+                    {
+                        "content": "I am a nested item",
+                        "isCompleted": false,
+                        "dateDue": ""
+                    }
+                ]
+            },
+            {
+                "content": "I am another list item",
+                "isCompleted": false,
+                "dateDue": ""
+            },
+            {
+                "content": "One final list item",
+                "isCompleted": false,
+                "dateDue": ""
+            }
+        ]
+    },
+    {
+        "_id": "2",
+        "dateCreated": "17/11/2021",
+        "items": []
+    }
+]
+
+
