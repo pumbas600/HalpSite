@@ -5,10 +5,9 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import "./todoitem.css";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
 function TodoItem({ itemData }) {
-  const [isComplete, setIsComplete] = useState(itemData.isComplete || false);
+
+  const [isComplete, setIsComplete] = useState(itemData.isComplete);
 
   let toggle = () => {
     setIsComplete(!isComplete);
@@ -20,7 +19,7 @@ function TodoItem({ itemData }) {
           className={isComplete ? "checkedStyle" : "uncheckedStyle"}
           control={
             <Checkbox
-              defaultChecked
+              defaultChecked={isComplete}
               onChange={toggle}
               sx={{
                 color: "#fff",

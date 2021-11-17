@@ -5,24 +5,24 @@
         "items": [
             {
                 "content": "I am a list item",
-                "isCompleted": false,
+                "isComplete": false,
                 "dateDue": "",
                 "items": [
                     {
                         "content": "I am a nested item",
-                        "isCompleted": false,
+                        "isComplete": false,
                         "dateDue": ""
                     }
                 ]
             },
             {
-                "content": "I am another list item",
-                "isCompleted": false,
+                "content": "I am a complete list item",
+                "isComplete": true,
                 "dateDue": ""
             },
             {
                 "content": "One final list item",
-                "isCompleted": false,
+                "isComplete": false,
                 "dateDue": ""
             }
         ]
