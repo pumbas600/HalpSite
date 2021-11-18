@@ -9,29 +9,38 @@ function TodoItem({ itemData }) {
 
   const [isComplete, setIsComplete] = useState(itemData.isComplete);
 
+  const hasNestedItems = itemData.items && itemData.items.length !== 0;
+
   let toggle = () => {
     setIsComplete(!isComplete);
   };
   return (
     <li>
-      <FormGroup>
-        <FormControlLabel
-          className={isComplete ? "checkedStyle" : "uncheckedStyle"}
-          control={
-            <Checkbox
-              defaultChecked={itemData.isComplete}
-              onChange={toggle}
-              sx={{
-                color: "#fff",
-                "&.Mui-checked": { color: "#FBEBA5" },
-              }}
-            />
-          }
-          label={itemData.content}
-        />
-      </FormGroup>
-      {itemData.items && itemData.items.length !== 0 && (
-        <ul>{renderItems(itemData.items)}</ul>
+      {hasNestedItems ? (
+        <div>
+          <div className="list-item">
+            <div className="completion-wheel"></div>
+            <p>{itemData.content}</p>
+          </div>
+          <ul>{renderItems(itemData.items)}</ul>
+        </div>
+      ) : (
+        <FormGroup>
+          <FormControlLabel
+            className={isComplete ? "checkedStyle" : "uncheckedStyle"}
+            control={
+              <Checkbox
+                defaultChecked={itemData.isComplete}
+                onChange={toggle}
+                sx={{
+                  color: "#fff",
+                  "&.Mui-checked": { color: "#FBEBA5" },
+                }}
+              />
+            }
+            label={itemData.content}
+          />
+        </FormGroup>
       )}
     </li>
   );

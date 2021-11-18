@@ -12,6 +12,11 @@
                         "content": "I am a nested item",
                         "isComplete": false,
                         "dateDue": ""
+                    },
+                    {
+                        "content": "I am a complete nested item",
+                        "isComplete": true,
+                        "dateDue": ""
                     }
                 ]
             },
