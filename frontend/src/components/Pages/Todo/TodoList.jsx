@@ -4,12 +4,17 @@ import TodoItem from "./TodoItem";
 
 export function renderItems(items, ifEmpty = undefined) {
   var index = 0;
-  if (items.length !== 0) {
-    return items.map((todoItem) => (
-      <TodoItem key={index++} itemData={todoItem} />
-    ));
-  }
-  return ifEmpty && <li>{ifEmpty}</li>;
+  return (
+    <ul>
+      {items.length !== 0 ? (
+        items.map((todoItem) => (
+          <TodoItem key={index++} itemData={todoItem} />
+        ))
+      ) : (
+        ifEmpty && <li>{ifEmpty}</li>
+      )}
+    </ul>
+  );
 }
 
 function TodoList({ listData }) {
@@ -17,7 +22,7 @@ function TodoList({ listData }) {
     <div className="todo-list" id={listData._id}>
       <h3>Todo List</h3>
       <hr />
-      <ul>{renderItems(listData.items, "All done!")}</ul>
+      {renderItems(listData.items, "All done!")}
     </div>
   );
 }
