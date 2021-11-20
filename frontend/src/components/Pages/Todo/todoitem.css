@@ -34,6 +34,11 @@
   margin-right: 10px;
 }
 
+.group-list-icon.completed {
+  color: #FBEBA5;
+  font-weight: bold;
+}
+
 .group-list-icon p {
   margin-left: 2px;
   font-size: 13px;

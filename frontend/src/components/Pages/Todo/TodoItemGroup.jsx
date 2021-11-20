@@ -10,11 +10,16 @@ import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 function TodoItemGroup({ itemData, onItemToggled }) {
 
   const [completedItems, setCompletedItems] = useState(completedItemCount());
+  const [isComplete, setIsComplete] = useState(completedItems === itemData.items.length);
 
   useEffect(() => {
-    if (onItemToggled) 
-      onItemToggled(completedItems === itemData.items.length);
-  }, [completedItems, itemData.items.length, onItemToggled]);
+    const checkedIsCompleted = completedItems === itemData.items.length;
+    if (isComplete !== checkedIsCompleted) {
+      if (onItemToggled)
+        onItemToggled(checkedIsCompleted);
+      setIsComplete(checkedIsCompleted);
+    }
+  }, [completedItems, isComplete, itemData.items.length, onItemToggled]);
 
   function completedItemCount() {
     return itemData.items.filter(itemData => itemData.isComplete).length;
@@ -27,16 +32,16 @@ function TodoItemGroup({ itemData, onItemToggled }) {
   }
 
   return (
-    <div>
+    <li>
       <div className="list-row">
-        <div className="list-row group-list-icon">
+        <div className={`list-row group-list-icon ${(isComplete ? "completed" : "")}`}>
           <LibraryAddCheckIcon />
           <p>{`${completedItems}/${itemData.items.length}`}</p>
         </div>
-        <p>{itemData.content}</p>
+        <p className={isComplete ? "checkedStyle" : "uncheckedStyle"}>{itemData.content}</p>
       </div>
       {renderItems(itemData.items, { onItemToggled: onChildItemToggled })}
-    </div>
+    </li>
   );
 }
 
