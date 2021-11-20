@@ -4,14 +4,15 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import "./todoitem.css";
 
-function TodoItem({ itemData }) {
+function TodoItem({ itemData, onItemToggled }) {
 
   const [isComplete, setIsComplete] = useState(itemData.isComplete);
 
   let toggle = () => {
+    if (onItemToggled) onItemToggled(!isComplete);
     setIsComplete(!isComplete);
   };
-  
+
   return (
     <li>
       <FormGroup>

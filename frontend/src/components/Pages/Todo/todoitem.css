@@ -7,9 +7,8 @@
 }
 
 .completion-wheel {
-  width: 30px;
-  height: 30px;
-  border: solid 2px white;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   color: rgb(87, 87, 87);
   display: flex;
@@ -25,8 +24,17 @@
 			#6bdb5d 50%, #bdbdbd 0%);
 }
 
-.list-item {
+.list-row {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.group-list-icon {
+  margin-right: 10px;
+}
+
+.group-list-icon p {
+  margin-left: 2px;
+  font-size: 13px;
 }

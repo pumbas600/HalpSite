@@ -1,15 +1,20 @@
 import "./todo.css";
 import React from "react";
 import TodoItem from "./TodoItem";
+import TodoItemGroup from "./TodoItemGroup";
 
-export function renderItems(items, ifEmpty = undefined) {
+export function renderItems(items, { ifEmpty, onItemToggled }) {
   var index = 0;
   return (
     <ul>
       {items.length !== 0 ? (
-        items.map((todoItem) => (
-          <TodoItem key={index++} itemData={todoItem} />
-        ))
+        items.map((todoItem) => {
+          const hasNestedItems = todoItem.items && todoItem.items.length !== 0;
+          if (hasNestedItems)
+            return <TodoItemGroup key={index++} itemData={todoItem} onItemToggled={onItemToggled} />
+
+          return <TodoItem key={index++} itemData={todoItem} onItemToggled={onItemToggled} />
+        })
       ) : (
         ifEmpty && <li>{ifEmpty}</li>
       )}
@@ -22,7 +27,7 @@ function TodoList({ listData }) {
     <div className="todo-list" id={listData._id}>
       <h3>Todo List</h3>
       <hr />
-      {renderItems(listData.items, "All done!")}
+      {renderItems(listData.items, { ifEmpty: "All done!" })}
     </div>
   );
 }
