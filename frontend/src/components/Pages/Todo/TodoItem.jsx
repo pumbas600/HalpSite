@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import "./todoitem.css";
+import "./todo.css";
 
 function TodoItem({ itemData, onItemToggled }) {
 
@@ -17,7 +17,7 @@ function TodoItem({ itemData, onItemToggled }) {
     <li>
       <FormGroup>
         <FormControlLabel
-          className={isComplete ? "checkedStyle" : "uncheckedStyle"}
+          className={isComplete ? "checked-style" : "unchecked-style"}
           control={
             <Checkbox
               defaultChecked={itemData.isComplete}

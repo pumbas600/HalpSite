@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { renderItems } from "./TodoList"
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+import "./todo.css"
 
-/**
- * TodoItemGroup is very similar to {@link TodoItem} except that it contains nested items.
- * 
- * @param {any} itemData 
- */
 function TodoItemGroup({ itemData, onItemToggled }) {
 
   const [completedItems, setCompletedItems] = useState(completedItemCount());
@@ -38,7 +34,7 @@ function TodoItemGroup({ itemData, onItemToggled }) {
           <LibraryAddCheckIcon />
           <p>{`${completedItems}/${itemData.items.length}`}</p>
         </div>
-        <p className={isComplete ? "checkedStyle" : "uncheckedStyle"}>{itemData.content}</p>
+        <p className={isComplete ? "checked-style" : "unchecked-style"}>{itemData.content}</p>
       </div>
       {renderItems(itemData.items, { onItemToggled: onChildItemToggled })}
     </li>
