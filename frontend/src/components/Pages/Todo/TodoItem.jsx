@@ -1,39 +1,36 @@
 import React, { useState } from "react";
-import { renderItems } from "./TodoList";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import "./todoitem.css";
+import "./todo.css";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+function TodoItem({ itemData, onItemToggled }) {
 
-function TodoItem({ itemData }) {
-  const [isComplete, setIsComplete] = useState(itemData.isComplete || false);
+  const [isComplete, setIsComplete] = useState(itemData.isComplete);
 
   let toggle = () => {
+    if (onItemToggled) onItemToggled(!isComplete);
     setIsComplete(!isComplete);
   };
+
   return (
     <li>
       <FormGroup>
         <FormControlLabel
-          className={isComplete ? "checkedStyle" : "uncheckedStyle"}
+          className={isComplete ? "checked-style" : "unchecked-style"}
           control={
             <Checkbox
-              defaultChecked
+              defaultChecked={itemData.isComplete}
               onChange={toggle}
               sx={{
                 color: "#fff",
-                "&.Mui-checked": { color: "#FBEBA5" },
+                "&.Mui-checked": { color: "#fbeba5" },
               }}
             />
           }
           label={itemData.content}
         />
       </FormGroup>
-      {itemData.items && itemData.items.length !== 0 && (
-        <ul>{renderItems(itemData.items)}</ul>
-      )}
     </li>
   );
 }
