@@ -4,16 +4,15 @@ import TodoItem from "./TodoItem";
 import TodoItemGroup from "./TodoItemGroup";
 
 export function renderItems(items, { ifEmpty, onItemToggled }) {
-  var index = 0;
   return (
     <ul>
-      {items.length !== 0 ? (
-        items.map((todoItem) => {
-          const hasNestedItems = todoItem.items && todoItem.items.length !== 0;
+      {items.length ? (
+        items.map((todoItem, index) => {
+          const hasNestedItems = todoItem.items && todoItem.items.length;
           if (hasNestedItems)
-            return <TodoItemGroup key={index++} itemData={todoItem} onItemToggled={onItemToggled} />
+            return <TodoItemGroup key={index} itemData={todoItem} onItemToggled={onItemToggled} />
 
-          return <TodoItem key={index++} itemData={todoItem} onItemToggled={onItemToggled} />
+          return <TodoItem key={index} itemData={todoItem} onItemToggled={onItemToggled} />
         })
       ) : (
         ifEmpty && <li>{ifEmpty}</li>

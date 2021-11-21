@@ -24,7 +24,7 @@ function TodoItem({ itemData, onItemToggled }) {
               onChange={toggle}
               sx={{
                 color: "#fff",
-                "&.Mui-checked": { color: "#FBEBA5" },
+                "&.Mui-checked": { color: "#fbeba5" },
               }}
             />
           }
