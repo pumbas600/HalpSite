@@ -8,7 +8,7 @@ export function renderItems(items, { ifEmpty, onItemToggled }) {
     <ul>
       {items.length ? (
         items.map((todoItem, index) => {
-          const hasNestedItems = todoItem.items && todoItem.items.length;
+          const hasNestedItems = todoItem.items?.length;
           if (hasNestedItems)
             return <TodoItemGroup key={index} itemData={todoItem} onItemToggled={onItemToggled} />
 
