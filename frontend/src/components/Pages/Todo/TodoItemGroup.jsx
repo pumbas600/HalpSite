@@ -25,22 +25,22 @@ function TodoItemGroup({ itemData, onItemToggled }) {
         else setCompletedItems(completedItems - 1);
     }
 
-  return (
-    <li>
-      <div className="list-row">
-        <div className={`list-row group-list-icon ${(isComplete ? "completed" : "")}`}>
-          <LibraryAddCheckIcon />
-          <Typography variant='body2'>
-            {`${completedItems}/${itemData.items.length}`}
-          </Typography>
-        </div>
-        <Typography variant='body1' className={isComplete ? "checked-style" : "unchecked-style"}>
-          {itemData.content}
-        </Typography>
-      </div>
-      {renderItems(itemData.items, { onItemToggled: onChildItemToggled })}
-    </li>
-  );
+    return (
+        <li>
+            <div className="list-row">
+                <div className={`list-row group-list-icon ${(isComplete ? "completed" : "")}`}>
+                    <LibraryAddCheckIcon />
+                    <Typography variant='body2'>
+                        {`${completedItems}/${itemData.items.length}`}
+                    </Typography>
+                </div>
+                <Typography variant='body1' className={isComplete ? "checked-style" : "unchecked-style"}>
+                    {itemData.content}
+                </Typography>
+            </div>
+            {renderItems(itemData.items, { onItemToggled: onChildItemToggled })}
+        </li>
+    );
 }
 
 export default TodoItemGroup;

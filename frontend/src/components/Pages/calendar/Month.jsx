@@ -5,20 +5,20 @@ import Day from './Day';
 function Month({ date = new Date() }) {
 
     function monthDays() {
-      return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+        return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     }
 
     function generateDays() {
-      let days = [];
-      for (let i = 1; i <= monthDays(); i++) {
-        let day = new Date(date.getFullYear(), date.getMonth(), i);
-        days.push(
-          <Grid item xs={12/7}>
-            <Day date={day} />
-          </Grid>
-        );
-      }
-      return days;
+        let days = [];
+        for (let i = 1; i <= monthDays(); i++) {
+            let day = new Date(date.getFullYear(), date.getMonth(), i);
+            days.push(
+                <Grid item xs={12/7}>
+                    <Day date={day} />
+                </Grid>
+            );
+        }
+        return days;
     }
   
     return (
