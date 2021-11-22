@@ -1,26 +1,26 @@
 @import '../../../styles/variables.css';
 
 .checked-style {
-  color: #e6edf4;
-  text-decoration: line-through;
+    color: #e6edf4;
+    text-decoration: line-through;
 }
 .unchecked-style {
-  color: white;
+    color: white;
 }
 
 .list-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .group-list-icon {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .group-list-icon.completed {
-  color: #fbeba5;
-  font-weight: bold;
+    color: #fbeba5;
+    font-weight: bold;
 }
 
 .todo-list {

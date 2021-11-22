@@ -17,5 +17,5 @@ function Day({ date }) {
         </Card>
     );
 }
-// /todo/yyyy/mm/dd
+
 export default Day;
