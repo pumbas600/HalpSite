@@ -1,4 +1,4 @@
-@import "../../../styles/variables.css";
+@import '../../../styles/variables.css';
 
 .checked-style {
   color: #e6edf4;
@@ -29,28 +29,28 @@
 }
 
 .todo-list {
-  width: 500px;
-  background-color: #b7cce2;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
+    width: 500px;
+    background-color: #b7cce2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
 }
 
 .todo-list h3 {
-  color: white;
-  margin-top: 5px;
-  margin-bottom: 0px;
-  text-align: center;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 ul {
-  padding-inline-start: 20px;
-  color: white;
+    padding-inline-start: 20px;
+    color: white;
 }
 
 hr {
-  border: 0;
-  border-top: 2px solid #fff;
+    border: 0;
+    border-top: 2px solid #fff;
 }
 
 /* I think we should have the sidebar cover content instead of pushing it to the side - erin */
