@@ -1,19 +1,20 @@
 # HalpSite
+
 A website designed to help make the lives of students easier
 
-### Style Guide 
+### Style Guide
 
 To be agreed upon.
 
-### Technologies 
+### Technologies
 
 MERN Stack?
 
 ### Tasks
 
-- [ ] Steam table look ups
-- [ ] Pomodoro timer
-- [ ] Dictionary / Synonym API
-- [ ] TODO Lists - Integrated with calendars
-- [ ] Calendar integration
-- [ ] Joe Biden
+-   [ ] Steam table look ups
+-   [ ] Pomodoro timer
+-   [ ] Dictionary / Synonym API
+-   [ ] TODO Lists - Integrated with calendars
+-   [ ] Calendar integration
+-   [ ] Joe Biden
