@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { renderItems } from "./TodoList"
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 import "./todo.css"
+import { Typography } from "@mui/material";
 
 function TodoItemGroup({ itemData, onItemToggled }) {
 
@@ -32,9 +33,13 @@ function TodoItemGroup({ itemData, onItemToggled }) {
       <div className="list-row">
         <div className={`list-row group-list-icon ${(isComplete ? "completed" : "")}`}>
           <LibraryAddCheckIcon />
-          <p>{`${completedItems}/${itemData.items.length}`}</p>
+          <Typography variant='body2'>
+            {`${completedItems}/${itemData.items.length}`}
+          </Typography>
         </div>
-        <p className={isComplete ? "checked-style" : "unchecked-style"}>{itemData.content}</p>
+        <Typography variant='body1' className={isComplete ? "checked-style" : "unchecked-style"}>
+          {itemData.content}
+        </Typography>
       </div>
       {renderItems(itemData.items, { onItemToggled: onChildItemToggled })}
     </li>

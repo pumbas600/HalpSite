@@ -23,24 +23,21 @@
   font-weight: bold;
 }
 
-.group-list-icon p {
-  margin-left: 2px;
-  font-size: 13px;
-}
-
 .todo-list {
-    width: 500px;
-    background-color: #b7cce2;
+    background-color: #b7cce2;   
     border-radius: 5px;
-    padding: 5px 10px;
-    margin: 5px;
 }
 
-.todo-list h3 {
+.todo-list-main{
+  min-width: 25vw;
+  margin: 5px;
+
+}
+
+.todo-list-title {
     color: white;
     margin-top: 5px;
     margin-bottom: 0;
-    text-align: center;
 }
 
 ul {

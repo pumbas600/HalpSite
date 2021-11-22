@@ -2,6 +2,10 @@ import "./todo.css";
 import React from "react";
 import TodoItem from "./TodoItem";
 import TodoItemGroup from "./TodoItemGroup";
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent';
+import { Grid, Typography } from '@mui/material';
+
 
 export function renderItems(items, { ifEmpty, onItemToggled }) {
   return (
@@ -23,11 +27,15 @@ export function renderItems(items, { ifEmpty, onItemToggled }) {
 
 function TodoList({ listData }) {
   return (
-    <div className="todo-list" id={listData._id}>
-      <h3>Todo List</h3>
-      <hr />
-      {renderItems(listData.items, { ifEmpty: "All done!" })}
-    </div>
+    <Card className="todo-list-main">
+      <CardContent className="todo-list">
+        <Typography variant='h4' className="centre-text todo-list-title">
+          Todo List
+        </Typography>
+        <hr />
+        {renderItems(listData.items, { ifEmpty: "All done!" })}
+      </CardContent>
+    </Card>
   );
 }
 
